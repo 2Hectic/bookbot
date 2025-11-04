@@ -13,9 +13,10 @@ def count_characters(book):
     return char_counts
 
 def sort_dictionary(char_counts):
-    dictlist = [dict()]
+    dictlist = []
     for key in char_counts.keys():
-        dictlist.append({"name": key, "num": char_counts[key]})
+        if str.isalpha(key):
+            dictlist.append({"name": key, "num": char_counts[key]})
     dictlist.sort(reverse=True, key=sort_on)
     return dictlist
 
